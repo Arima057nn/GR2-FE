@@ -18,11 +18,11 @@ axiosClient.interceptors.response.use(
 
 axiosClient.interceptors.request.use(
   (config) => {
-    // const user = JSON.parse((localStorage as any).getItem("user") || {});
-    // const token = user?.accessToken;
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`;
-    // }
+    const user = JSON.parse((localStorage as any).getItem("user") || {});
+    const token = user?.accessToken;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
   function (error) {
