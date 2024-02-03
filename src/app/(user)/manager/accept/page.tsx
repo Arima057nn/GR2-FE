@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -8,6 +10,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { ProcessingManager } from "@/app/models/manager";
 import ItemManagerAccept from "@/app/components/itemManagerAccept";
+import withManagerAuth from "@/app/components/withManagerAuth";
 
 function createData(
   id: string,
@@ -28,7 +31,7 @@ const rows = [
   createData("5", "Gingerbread", 356, "16.0", 49, 3.9),
 ];
 
-export default function Accept() {
+function Accept() {
   return (
     <div className="p-4 flex flex-col items-center">
       <p className="text-xl font-bold my-4">Accepted</p>
@@ -57,3 +60,4 @@ export default function Accept() {
     </div>
   );
 }
+export default withManagerAuth(Accept);

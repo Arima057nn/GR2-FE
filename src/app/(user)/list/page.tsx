@@ -2,6 +2,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import withUserAuth from "@/app/components/withUserAuth";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 100 },
@@ -50,7 +51,7 @@ const rows = [
   { id: 9, name: "Roxie Harvey", content: "Roxie ", age: 65 },
 ];
 
-export default function CreateRequest() {
+function ListRequest() {
   return (
     <div className="p-4 flex flex-col items-center">
       <p className="text-xl font-bold my-4">List Request</p>
@@ -74,3 +75,5 @@ export default function CreateRequest() {
     </div>
   );
 }
+
+export default withUserAuth(ListRequest);

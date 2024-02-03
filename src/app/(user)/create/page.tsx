@@ -9,8 +9,9 @@ import {
 import TextField from "@mui/material/TextField";
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
+import withUserAuth from "@/app/components/withUserAuth";
 
-export default function CreateRequest() {
+function CreateRequest() {
   const [age, setAge] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -80,3 +81,5 @@ export default function CreateRequest() {
     </div>
   );
 }
+
+export default withUserAuth(CreateRequest);

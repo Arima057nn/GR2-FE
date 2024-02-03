@@ -38,7 +38,13 @@ export default function Login() {
 
   // useEffect(() => {
   //   if (user && user.accessToken) {
-  //     router.back();
+  //     if (user.role === 3) {
+  //       router.push(`/list`);
+  //     } else if (user.role === 1) {
+  //       router.push(`/admin/list`);
+  //     } else if (user.role === 2) {
+  //       router.push(`/manager/list`);
+  //     }
   //   }
   // }, []);
 
@@ -51,8 +57,13 @@ export default function Login() {
       } else {
         dispatch && dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
         toast.success("Login successfully !");
-
-        router.push(`/list`);
+        if (res.data.role === 3) {
+          router.push(`/list`);
+        } else if (res.data.role === 1) {
+          router.push(`/admin/list`);
+        } else if (res.data.role === 2) {
+          router.push(`/manager/list`);
+        }
       }
     } catch (e) {
       const error = e as AxiosError;
