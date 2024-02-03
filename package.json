@@ -20,7 +20,9 @@
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
-    "styled-components": "^6.1.8"
+    "react-toastify": "^10.0.4",
+    "styled-components": "^6.1.8",
+    "toast": "^0.5.4"
   },
   "devDependencies": {
     "@types/node": "^20",

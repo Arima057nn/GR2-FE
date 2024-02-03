@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosClient = axios.create({
-  baseURL: "https://quicklib.onrender.com/api/v1",
+  baseURL: "http://localhost:3030/api",
   headers: {
     "Content-Type": "application/json",
   },
