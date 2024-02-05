@@ -23,4 +23,9 @@ export const requestApi = {
   getRequestByManagerId(status: number) {
     return axiosClient.get(`/request/manager/${status}`);
   },
+  changeStatusRequest(requestId: string, status: number) {
+    return axiosClient.put(
+      `/request/change?requestId=${requestId}&status=${status}`
+    );
+  },
 };

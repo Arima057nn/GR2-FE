@@ -23,7 +23,7 @@ function List() {
 
   const getRequests = async () => {
     let res = await requestApi.getRequestByManagerId(1);
-    setRequests(res.data);
+    setRequests(res.data || []);
   };
   return (
     <div className="p-4 flex flex-col items-center">
@@ -42,9 +42,10 @@ function List() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {requests.map((request: RequestInterface, index: number) => (
-              <ItemManagerList key={index} item={request} />
-            ))}
+            {Array.isArray(requests) &&
+              requests.map((request: RequestInterface) => (
+                <ItemManagerList key={request._id} item={request} />
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
