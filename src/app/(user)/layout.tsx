@@ -21,7 +21,7 @@ export default function RootLayout({
         <div className="w-1/5">
           <Sidebar />
         </div>
-        <div className="w-4/5 m-6 bg-white rounded-md shadow-md">
+        <div className="w-4/5 m-6 h-screen bg-white rounded-md shadow-md overflow-auto">
           {children}
         </div>
       </div>

@@ -16,4 +16,7 @@ export const requestApi = {
       categoryId,
     });
   },
+  getRequestByUserId(userId: string) {
+    return axiosClient.get(`/request/user/${userId}`);
+  },
 };
