@@ -15,6 +15,7 @@ export interface RequestInterface {
   status: number;
   userId: string;
   categoryId: CatetoryInterface;
+  managerId: string;
   updatedAt: Date;
   createdAt: Date;
   __v: number;

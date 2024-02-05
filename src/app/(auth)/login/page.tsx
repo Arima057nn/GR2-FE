@@ -56,7 +56,7 @@ export default function Login() {
         dispatch && dispatch({ type: "LOGIN_FAILURE" });
       } else {
         dispatch && dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-        toast.success("Login successfully !");
+        // toast.success("Login successfully !");
         if (res.data.role === 3) {
           router.push(`/list`);
         } else if (res.data.role === 1) {
@@ -67,7 +67,7 @@ export default function Login() {
       }
     } catch (e) {
       const error = e as AxiosError;
-      toast.error(error.message);
+      // toast.error(error.message);
     }
   };
   return (

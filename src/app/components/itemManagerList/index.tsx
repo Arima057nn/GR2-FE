@@ -1,21 +1,20 @@
 "use client";
 
-import { ListManager } from "@/app/models/manager";
 import { IconButton, TableCell, TableRow } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import CheckIcon from "@mui/icons-material/Check";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import { RequestInterface } from "@/app/models/request";
 
 const ItemManagerList: React.FC<{
-  item: ListManager;
+  item: RequestInterface;
 }> = ({ item }) => {
   return (
-    <TableRow key={item.name}>
-      <TableCell>{item.id}</TableCell>
-      <TableCell>{item.name}</TableCell>
-      <TableCell>{item.content}</TableCell>
-      <TableCell>{item.duedate}</TableCell>
-      <TableCell>{item.category}</TableCell>
+    <TableRow key={item._id}>
+      <TableCell>{item._id}</TableCell>
+      <TableCell>{item.title}</TableCell>
+      <TableCell>{item.createdAt}</TableCell>
+      <TableCell>{item.categoryId.name}</TableCell>
       <TableCell>{item.status}</TableCell>
       <TableCell sx={{ display: "flex" }}>
         <IconButton aria-label="delete" size="large">

@@ -19,4 +19,8 @@ export const requestApi = {
   getRequestByUserId(userId: string) {
     return axiosClient.get(`/request/user/${userId}`);
   },
+
+  getRequestByManagerId(status: number) {
+    return axiosClient.get(`/request/manager/${status}`);
+  },
 };
