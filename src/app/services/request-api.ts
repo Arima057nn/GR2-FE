@@ -28,4 +28,7 @@ export const requestApi = {
       `/request/change?requestId=${requestId}&status=${status}`
     );
   },
+  getRequestByAdminId(status: number) {
+    return axiosClient.get(`/request/admin/${status}`);
+  },
 };
