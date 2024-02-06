@@ -1,9 +1,10 @@
 "use client";
 import React, { createContext, useReducer, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { UserInterface } from "../models/user";
 
 interface UserContextProps {
-  user: any;
+  user: UserInterface;
   dispatch?: React.Dispatch<any>;
 }
 
