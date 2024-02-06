@@ -2,6 +2,8 @@
 
 import { TableCell, TableRow } from "@mui/material";
 import { RequestInterface } from "@/app/models/request";
+import { formatDate } from "@/app/utils/formatDate";
+import { formatStatus } from "@/app/utils/formatStatus";
 
 const ItemUserList: React.FC<{
   item: RequestInterface;
@@ -12,9 +14,9 @@ const ItemUserList: React.FC<{
       <TableCell>{key}</TableCell>
       <TableCell>{item.title}</TableCell>
       <TableCell>{item.content}</TableCell>
-      <TableCell>{item.createdAt}</TableCell>
+      <TableCell>{formatDate(item.createdAt)}</TableCell>
       <TableCell>{item.categoryId.name}</TableCell>
-      <TableCell>{item.status}</TableCell>
+      <TableCell>{formatStatus(item.status)}</TableCell>
     </TableRow>
   );
 };

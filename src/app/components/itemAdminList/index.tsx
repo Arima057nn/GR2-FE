@@ -8,6 +8,8 @@ import { RequestInterface } from "@/app/models/request";
 import { requestApi } from "@/app/services/request-api";
 import { AxiosError } from "axios";
 import { useState } from "react";
+import { formatDate } from "@/app/utils/formatDate";
+import { formatStatus } from "@/app/utils/formatStatus";
 
 const ItemAdminList: React.FC<{
   item: RequestInterface;
@@ -29,9 +31,9 @@ const ItemAdminList: React.FC<{
       <TableRow key={item._id}>
         <TableCell>{item._id}</TableCell>
         <TableCell>{item.title}</TableCell>
-        <TableCell>{item.createdAt}</TableCell>
+        <TableCell>{formatDate(item.createdAt)}</TableCell>
         <TableCell>{item.categoryId.name}</TableCell>
-        <TableCell>{item.status}</TableCell>
+        <TableCell>{formatStatus(item.status)}</TableCell>
         <TableCell sx={{ display: "flex" }}>
           <IconButton
             aria-label="delete"
